@@ -19,6 +19,8 @@ int main() {
 
 	array_rows_cols(arr, columns, rows);
 
+	delete[] arr;
+
 	int x;
 	cin >> x;
 	return 0;

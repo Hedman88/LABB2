@@ -5,7 +5,7 @@ using namespace std;
 void swap_sort(int &a, int &b, int &c, bool order);
 
 int main() {
-	while (true){
+	while (true) {
 		int a, b, c;
 		bool order;
 
