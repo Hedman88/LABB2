@@ -32,17 +32,6 @@ void task1() {
 	delete numberItems;
 }
 
-void task2() {
-	int wordSize;
-	cout << "How many letters does your word consist of?" << endl;
-	cin >> wordSize;
-	wordSize++;
-	char *word = new char[wordSize];
-	cout << "Give me your word" << endl;
-	cin >> word;
-	cout << "Palindrome? " << is_palindrome(word, wordSize) << endl;
-	delete word;
-}
 
 bool is_palindrome(char a[], int wordSize) {
 	for (int i = 0; i <= (wordSize / 2); i++) {
@@ -56,20 +45,16 @@ bool is_palindrome(char a[], int wordSize) {
 	return true;
 }
 
-void task3() {
-	int rows;
-	int columns;
-	cout << "How many rows do you require?" << endl;
-	cin >> rows;
-	cout << "How many columns do you require?" << endl;
-	cin >> columns;
-	int *arr = new int[columns * rows];
-	for (int i = 0; i < columns*rows; i++) {
-		arr[i] = rand() % 10;
-	}
-
-	array_rows_cols(arr, columns, rows);
-	delete[] arr;
+void task2() {
+	int wordSize;
+	cout << "How many letters does your word consist of?" << endl;
+	cin >> wordSize;
+	wordSize++;
+	char *word = new char[wordSize];
+	cout << "Give me your word" << endl;
+	cin >> word;
+	cout << "Palindrome? " << is_palindrome(word, wordSize) << endl;
+	delete word;
 }
 
 int array_rows_cols(int *a, int c, int r) {
@@ -96,27 +81,20 @@ int array_rows_cols(int *a, int c, int r) {
 	return true;
 }
 
-void task4() {
-	while (true) {
-		int a, b, c;
-		bool order;
-
-		cout << "Give a(0 to quit) :" << endl;
-		cin >> a;
-		if (a == 0) {
-			break;
-		}
-		cout << "Give b :" << endl;
-		cin >> b;
-		cout << "Give c :" << endl;
-		cin >> c;
-		cout << "Sort ascending / descending(1 / 0) :" << endl;
-		cin >> order;
-
-		swap_sort(a, b, c, order);
-
-		cout << "Result : " << a << " " << b << " " << c << endl;
+void task3() {
+	int rows;
+	int columns;
+	cout << "How many rows do you require?" << endl;
+	cin >> rows;
+	cout << "How many columns do you require?" << endl;
+	cin >> columns;
+	int *arr = new int[columns * rows];
+	for (int i = 0; i < columns*rows; i++) {
+		arr[i] = rand() % 10;
 	}
+
+	array_rows_cols(arr, columns, rows);
+	delete[] arr;
 }
 
 void swap_sort(int &a, int &b, int &c, bool order) {
@@ -160,6 +138,55 @@ void swap_sort(int &a, int &b, int &c, bool order) {
 
 }
 
+void task4() {
+	while (true) {
+		int a, b, c;
+		bool order;
+
+		cout << "Give a(0 to quit) :" << endl;
+		cin >> a;
+		if (a == 0) {
+			break;
+		}
+		cout << "Give b :" << endl;
+		cin >> b;
+		cout << "Give c :" << endl;
+		cin >> c;
+		cout << "Sort ascending / descending(1 / 0) :" << endl;
+		cin >> order;
+
+		swap_sort(a, b, c, order);
+
+		cout << "Result : " << a << " " << b << " " << c << endl;
+	}
+}
+
+void shrink_array(int a[], int size) {
+	int j = 0;
+	//cout << sizeof(a) << " " << sizeof(int) << endl;
+	if (size % 2 == 1) {
+		for (int i = 1; i < size - 1; i = i + 2) {
+			a[j] = a[i] + a[i - 1];
+			j++;
+			cout << j << endl;
+		}
+		a[j] = a[size - 1];
+		for (j = j + 1; j < size; j++) {
+			a[j] = 0;
+		}
+	}
+	else {
+		for (int i = 0; i < size - 1; i = i + 2) {
+			a[j] = a[i] + a[i + 1];
+			j++;
+			cout << j << endl;
+		}
+		for (j; j < size; j++) {
+			a[j] = 0;
+		}
+	}
+}
+
 void task5() {
 	int inputarray[] = { 5, 5, 7, 6, 2, 2 ,11 ,11, 5, 4 };
 	int arraySize = sizeof(inputarray) / sizeof(int);
@@ -195,31 +222,6 @@ void task5() {
 	cout << endl;
 }
 
-void shrink_array(int a[], int size) {
-	int j = 0;
-	//cout << sizeof(a) << " " << sizeof(int) << endl;
-	if (size % 2 == 1) {
-		for (int i = 1; i < size - 1; i = i + 2) {
-			a[j] = a[i] + a[i - 1];
-			j++;
-			cout << j << endl;
-		}
-		a[j] = a[size - 1];
-		for (j = j + 1; j < size; j++) {
-			a[j] = 0;
-		}
-	}
-	else {
-		for (int i = 0; i < size - 1; i = i + 2) {
-			a[j] = a[i] + a[i + 1];
-			j++;
-			cout << j << endl;
-		}
-		for (j; j < size; j++) {
-			a[j] = 0;
-		}
-	}
-}
 
 void task6() {
 	int userinput;
