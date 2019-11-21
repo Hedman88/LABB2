@@ -14,7 +14,7 @@ int main() {
 	cin >> columns;
 	int *a = new int[columns * rows];
 	for (int i = 0; i < columns; i++) {
-
+		
 	}
 
 
