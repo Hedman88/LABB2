@@ -166,6 +166,7 @@
   <ItemGroup>
     <ProjectReference Include="..\lab2lib\lab2lib.vcxproj">
       <Project>{50211594-e115-459d-af31-07b878c36322}</Project>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

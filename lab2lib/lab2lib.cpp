@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
-#include "lab2lib.h"
+
 
 using namespace std;
 
